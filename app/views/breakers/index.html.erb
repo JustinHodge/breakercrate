@@ -6,9 +6,9 @@
   <% @breakers.each do |breaker| %>
     <%= render breaker %>
     <p>
-      <%= link_to "Show this breaker", breaker %>
+      <%= link_to "Show this breaker", breaker, class: "btn btn-sm btn-primary" %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New breaker", new_breaker_path %>
+<%= link_to "New breaker", new_breaker_path, class: "btn btn-primary" %>

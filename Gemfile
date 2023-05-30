@@ -54,8 +54,7 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
 
-gem "bootstrap-sass"
-gem "sass-rails"
+gem "bootstrap"
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
