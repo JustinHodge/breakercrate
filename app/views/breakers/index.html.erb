@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Breakers</h1>
+
+<div id="breakers">
+  <% @breakers.each do |breaker| %>
+    <%= render breaker %>
+    <p>
+      <%= link_to "Show this breaker", breaker %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New breaker", new_breaker_path %>

@@ -1,0 +1,27 @@
+<%= form_with(model: breaker) do |form| %>
+  <% if breaker.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(breaker.errors.count, "error") %> prohibited this breaker from being saved:</h2>
+
+      <ul>
+        <% breaker.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :amperage, style: "display: block" %>
+    <%= form.number_field :amperage %>
+  </div>
+
+  <div>
+    <%= form.label :status, style: "display: block" %>
+    <%= form.check_box :status %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
