@@ -12,6 +12,22 @@
   <% end %>
 
   <div>
-    <%= form.submit %>
+    <%= form.label :height, style: "display: block" %>
+    <%= form.number_field :height %>
+  </div>
+
+  <div>
+    <%= form.label :width, style: "display: block" %>
+    <%= form.number_field :width %>
+  </div>
+
+  <div>
+    <%= form.label :length, style: "display: block" %>
+    <%= form.number_field :length %>
+  </div>
+
+
+  <div>
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>
