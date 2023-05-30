@@ -65,6 +65,6 @@ class BreakersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def breaker_params
-      params.require(:breaker).permit(:amperage, :status)
+      params.require(:breaker).permit(:amperage, :status, :slot, :label)
     end
 end
