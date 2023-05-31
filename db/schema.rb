@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_31_144613) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_31_161814) do
   create_table "breakers", force: :cascade do |t|
     t.integer "amperage"
     t.boolean "status"
@@ -40,6 +40,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_31_144613) do
     t.integer "height"
     t.integer "width"
     t.integer "length"
+    t.string "label"
   end
 
   add_foreign_key "outlets", "breakers", column: "breakers_id"
