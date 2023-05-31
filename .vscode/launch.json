@@ -11,7 +11,7 @@
             "remoteHost": "127.0.0.1",
             "remotePort": "1234",
             "cwd": "${workspaceRoot}",
-            "remoteWorkspaceRoot": "/mnt/c/Users/Mrcy/dev/RUBY/breakercrate"
+            "remoteWorkspaceRoot": "/mnt/c/Users/Mrcy/DEV/RUBY/breakercrate"
         }
     ]
 }
