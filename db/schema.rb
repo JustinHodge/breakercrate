@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_30_202910) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_31_133119) do
   create_table "breakers", force: :cascade do |t|
     t.integer "amperage"
     t.boolean "status"
@@ -18,6 +18,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_30_202910) do
     t.datetime "updated_at", null: false
     t.integer "slot"
     t.string "label"
+  end
+
+  create_table "outlets", force: :cascade do |t|
+    t.string "type"
+    t.boolean "is_gfci"
+    t.string "room_id"
+    t.string "integer"
+    t.integer "breaker_id"
+    t.integer "location_x"
+    t.integer "location_y"
+    t.integer "location_z"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "rooms", force: :cascade do |t|

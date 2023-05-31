@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Outlets</h1>
+
+<div id="outlets">
+  <% @outlets.each do |outlet| %>
+    <%= render outlet %>
+    <p>
+      <%= link_to "Show this outlet", outlet %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New outlet", new_outlet_path %>

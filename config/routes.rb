@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :outlets
   resources :rooms
   get 'home', to: 'home#index'
   get 'map', to: 'map#index'

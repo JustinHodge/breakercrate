@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @outlet %>
+
+<div>
+  <%= link_to "Edit this outlet", edit_outlet_path(@outlet) %> |
+  <%= link_to "Back to outlets", outlets_path %>
+
+  <%= button_to "Destroy this outlet", @outlet, method: :delete %>
+</div>
