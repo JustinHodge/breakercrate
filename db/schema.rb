@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_31_162859) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_31_185843) do
   create_table "breakers", force: :cascade do |t|
     t.integer "amperage"
     t.boolean "status"
@@ -34,6 +34,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_31_162859) do
     t.index ["rooms_id"], name: "index_outlets_on_rooms_id"
   end
 
+  create_table "room_connections", force: :cascade do |t|
+    t.integer "room_a_id_id", null: false
+    t.integer "room_b_id_id", null: false
+    t.integer "room_a_x_position"
+    t.integer "room_b_x_postion"
+    t.integer "room_a_y_position"
+    t.integer "room_b_y_position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["room_a_id_id"], name: "index_room_connections_on_room_a_id_id"
+    t.index ["room_b_id_id"], name: "index_room_connections_on_room_b_id_id"
+  end
+
   create_table "rooms", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -46,4 +59,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_31_162859) do
 
   add_foreign_key "outlets", "breakers", column: "breakers_id"
   add_foreign_key "outlets", "rooms", column: "rooms_id"
+  add_foreign_key "room_connections", "rooms", column: "room_a_id_id"
+  add_foreign_key "room_connections", "rooms", column: "room_b_id_id"
 end

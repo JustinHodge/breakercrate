@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @room_connection %>
+
+<div>
+  <%= link_to "Edit this room connection", edit_room_connection_path(@room_connection) %> |
+  <%= link_to "Back to room connections", room_connections_path %>
+
+  <%= button_to "Destroy this room connection", @room_connection, method: :delete %>
+</div>

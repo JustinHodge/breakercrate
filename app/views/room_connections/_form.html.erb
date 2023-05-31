@@ -1,0 +1,47 @@
+<%= form_with(model: room_connection) do |form| %>
+  <% if room_connection.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(room_connection.errors.count, "error") %> prohibited this room_connection from being saved:</h2>
+
+      <ul>
+        <% room_connection.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :room_a_id_id, style: "display: block" %>
+    <%= collection_select(:rooms, :id, Room.all, :id, :label || :id,{},{:class => "form-control"}) %>
+  </div>
+
+  <div>
+    <%= form.label :room_b_id_id, style: "display: block" %>
+    <%= collection_select(:rooms, :id, Room.all, :id, :label || :id,{},{:class => "form-control"}) %>
+  </div>
+
+  <div>
+    <%= form.label :room_a_x_position, style: "display: block" %>
+    <%= form.number_field :room_a_x_position, :class => "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :room_b_x_postion, style: "display: block" %>
+    <%= form.number_field :room_b_x_postion, :class => "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :room_a_y_position, style: "display: block" %>
+    <%= form.number_field :room_a_y_position, :class => "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :room_b_y_position, style: "display: block" %>
+    <%= form.number_field :room_b_y_position, :class => "form-control" %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
