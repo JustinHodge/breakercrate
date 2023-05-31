@@ -13,12 +13,12 @@
 
   <div>
     <%= form.label :room_a_id_id, style: "display: block" %>
-    <%= collection_select(:rooms, :id, Room.all, :id, :label || :id,{},{:class => "form-control"}) %>
+    <%= collection_select(:room_connection, :room_a_id_id, Room.all, :id, :label || :id,{},{:class => "form-control"}) %>
   </div>
 
   <div>
     <%= form.label :room_b_id_id, style: "display: block" %>
-    <%= collection_select(:rooms, :id, Room.all, :id, :label || :id,{},{:class => "form-control"}) %>
+    <%= collection_select(:room_connection, :room_b_id_id, Room.all, :id, :label || :id,{},{:class => "form-control"}) %>
   </div>
 
   <div>
