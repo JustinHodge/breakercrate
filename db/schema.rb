@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_31_162336) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_31_162859) do
   create_table "breakers", force: :cascade do |t|
     t.integer "amperage"
     t.boolean "status"
@@ -37,9 +37,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_31_162336) do
   create_table "rooms", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "height"
-    t.integer "width"
-    t.integer "length"
+    t.integer "z_size"
+    t.integer "x_size"
+    t.integer "y_size"
     t.string "label"
     t.integer "floor"
   end
