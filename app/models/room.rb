@@ -1,3 +1,3 @@
 class Room < ApplicationRecord
-  has_many :outlets, class_name: "outlet", foreign_key: "id", dependent: :destroy
+  has_many :outlets, dependent: :destroy
 end

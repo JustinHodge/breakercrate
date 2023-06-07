@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_31_185843) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_07_151609) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -31,10 +31,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_31_185843) do
     t.integer "location_z"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "rooms_id", null: false
-    t.bigint "breakers_id", null: false
-    t.index ["breakers_id"], name: "index_outlets_on_breakers_id"
-    t.index ["rooms_id"], name: "index_outlets_on_rooms_id"
+    t.bigint "room_id", null: false
+    t.bigint "breaker_id", null: false
+    t.index ["breaker_id"], name: "index_outlets_on_breaker_id"
+    t.index ["room_id"], name: "index_outlets_on_room_id"
   end
 
   create_table "room_connections", force: :cascade do |t|
@@ -60,8 +60,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_31_185843) do
     t.integer "floor"
   end
 
-  add_foreign_key "outlets", "breakers", column: "breakers_id"
-  add_foreign_key "outlets", "rooms", column: "rooms_id"
+  add_foreign_key "outlets", "breakers"
+  add_foreign_key "outlets", "rooms"
   add_foreign_key "room_connections", "rooms", column: "room_a_id_id"
   add_foreign_key "room_connections", "rooms", column: "room_b_id_id"
 end
