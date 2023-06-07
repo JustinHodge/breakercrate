@@ -11,6 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_05_31_185843) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "breakers", force: :cascade do |t|
     t.integer "amperage"
     t.boolean "status"
@@ -28,15 +31,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_31_185843) do
     t.integer "location_z"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "rooms_id", null: false
-    t.integer "breakers_id", null: false
+    t.bigint "rooms_id", null: false
+    t.bigint "breakers_id", null: false
     t.index ["breakers_id"], name: "index_outlets_on_breakers_id"
     t.index ["rooms_id"], name: "index_outlets_on_rooms_id"
   end
 
   create_table "room_connections", force: :cascade do |t|
-    t.integer "room_a_id_id", null: false
-    t.integer "room_b_id_id", null: false
+    t.bigint "room_a_id_id", null: false
+    t.bigint "room_b_id_id", null: false
     t.integer "room_a_x_position"
     t.integer "room_b_x_postion"
     t.integer "room_a_y_position"

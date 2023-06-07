@@ -32,9 +32,8 @@ RUN gem install rails -v 7.0.5
 WORKDIR /app
 COPY Gemfile Gemfile.lock ./
 
-RUN bundle check || bundle install
+RUN bundle install
 
 COPY . ./
-
 
 ENTRYPOINT ["./entrypoints/docker-entrypoint.sh"]

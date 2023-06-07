@@ -1,0 +1,2 @@
+CREATE USER dev_user WITH PASSWORD 'dev_pass';
+ALTER USER dev_user WITH SUPERUSER;
