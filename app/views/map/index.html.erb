@@ -1,2 +1,7 @@
-<h1>Map#index</h1>
-<p>Find me in app/views/map/index.html.erb</p>
+<svg viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
+    <% @rooms.each do |room| %>
+        <rect x="0" y="0" width="<%= room.x_size %>" height="<%= room.y_size %>" stroke="black" stroke-width="1" fill="none">
+            <text fill="black"><%= room.label %></text>
+        </rect>
+    <% end %>
+</svg>
