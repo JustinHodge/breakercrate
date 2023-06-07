@@ -1,3 +1,3 @@
 class Breaker < ApplicationRecord
-  has_many :outlet, class_name: "outlet", foreign_key: "id", dependent: :destroy
+  has_many :outlet, dependent: :destroy
 end
