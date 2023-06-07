@@ -65,6 +65,6 @@ class OutletsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def outlet_params
-      params.require(:outlet).permit(:type, :is_gfci, :room_id, :integer, :breaker_id, :location_x, :location_y, :location_z)
+      params.require(:outlet).permit(:description, :is_gfci, :room_id, :integer, :breaker_id, :location_x, :location_y, :location_z)
     end
 end
