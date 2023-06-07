@@ -23,12 +23,12 @@
 
   <div class="form-group">
     <%= form.label :room_id, style: "display: block" %>
-    <%= collection_select(:rooms, :id, Room.all, :id, :label || :id,{},{:class => "form-control"}) %>
+    <%= collection_select(:outlet, :room_id, Room.all, :id, :label || :id,{},{:class => "form-control"}) %>
   </div>
 
   <div class="form-group">
     <%= form.label :breaker_id, style: "display: block" %>
-    <%= collection_select(:breakers, :id, Breaker.all, :id, :label || :id,{},{:class => "form-control"}) %>
+    <%= collection_select(:outlet, :breaker_id, Breaker.all, :id, :label || :id,{},{:class => "form-control"}) %>
   </div>
 
   <div class="form-group">
